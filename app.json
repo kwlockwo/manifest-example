@@ -1,0 +1,16 @@
+{
+  "name": "salesforcedx-webide-hub",
+  "stack": "container",
+  "addons": [],
+  "buildpacks": [],
+  "env": {},
+  "formation": {
+    "web": {
+      "quantity": 1
+    }
+  },
+  "scripts": {
+    "postdeploy": "pwd",
+    "pr-predestroy": "pwd"
+  }
+}
