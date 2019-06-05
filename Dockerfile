@@ -13,4 +13,4 @@ RUN echo "hello" > /home/test/index.html
 
 RUN useradd -m heroku
 USER heroku
-CMD "http-server" "-s" "=p $PORT" 
+CMD "http-server" "-s" "-p $PORT" 
