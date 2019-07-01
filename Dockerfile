@@ -5,4 +5,5 @@ RUN npm config set unsafe-perm true
 RUN npm install -g http-server
 WORKDIR /home/test
 RUN echo "hello" > /home/test/index.html
+ENTRYPOINT /bin/sh -c
 CMD "http-server" "-s" "=p $PORT" 
