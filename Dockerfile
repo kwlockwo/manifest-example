@@ -11,7 +11,7 @@ WORKDIR /home/test
 RUN echo "hello" > /home/test/index.html
 
 ADD ./.profile.d /app/.profile.d
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+# RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN adduser -D heroku
 USER heroku
