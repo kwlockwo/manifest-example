@@ -1,8 +1,8 @@
-FROM heroku/heroku:18
+FROM alpine:3.8
 
-#Install Nodejs
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash
-RUN apt-get install --yes nodejs
+
+ #Install Nodejs	#Install Nodejs
+RUN apk add --no-cache --update nodejs nodejs-npm	
 RUN node -v
 RUN npm -v
 
