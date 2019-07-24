@@ -12,6 +12,6 @@ RUN echo "hello" > /home/test/index.html
 
 ADD ./.profile.d /app/.profile.d
 
-RUN useradd -m heroku
+RUN adduser -D heroku
 USER heroku
 CMD "http-server" "-s" "-p $PORT" 
