@@ -1,6 +1,5 @@
 FROM alpine:3.9
 
-
 #Install Nodejs
 RUN apk add --no-cache --update nodejs nodejs-npm	
 RUN apt-get install --yes nodejs
