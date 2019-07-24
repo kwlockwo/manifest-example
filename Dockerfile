@@ -1,7 +1,7 @@
 FROM alpine:3.8
 
 #Install Nodejs
-RUN apk add --no-cache --update nodejs nodejs-npm
+RUN apk add --no-cache --update bash nodejs nodejs-npm
 RUN node -v
 RUN npm -v
 
@@ -11,6 +11,7 @@ WORKDIR /home/test
 RUN echo "hello" > /home/test/index.html
 
 ADD ./.profile.d /app/.profile.d
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 RUN adduser -D heroku
 USER heroku
