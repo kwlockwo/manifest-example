@@ -9,7 +9,7 @@ RUN npm -v
 RUN npm config set unsafe-perm true
 RUN npm install -g http-server
 WORKDIR /home/test
-RUN echo "hello" > /home/test/index.html
+RUN echo "'sup bro" > /home/test/index.html
 
 ADD ./.profile.d /app/.profile.d
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
