@@ -1,8 +1,7 @@
-FROM heroku/heroku:18
+FROM alpine:3.9
 
 #Install Nodejs
-RUN curl -sL https://deb.nodesource.com/setup_11.x | bash
-RUN apt-get install --yes nodejs
+RUN apk add --no-cache --update nodejs nodejs-npm
 RUN node -v
 RUN npm -v
 
@@ -12,8 +11,7 @@ WORKDIR /home/test
 RUN echo "'sup bro" > /home/test/index.html
 
 ADD ./.profile.d /app/.profile.d
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
-RUN useradd -m heroku
+RUN adduser -D heroku
 USER heroku
 CMD "http-server" "-s" "-p $PORT" 
